@@ -104,22 +104,323 @@ const oilChangeCalculator = (
   return `Remaining distance before oil change: ${Math.round(remainingKm)} km.`;
 };
 
-// Sample data
-const sampleProducts: Product[] = [
+// data
+const Products: Product[] = [
   {
     id: "1",
-    title: "Royal 9 Premium Engine Oil",
-    description: "High-performance synthetic engine oil for superior protection",
-    price: 999,
-    image: "/products/premium-oil.jpg",
-    category: "Premium",
-    viscosityGrade: "10W-30",
-    volume: "4L",
-    specifications: "API SN Plus, ILSAC GF-5",
+    title: "Semi Synthetic (NB-5G)",
+    description: "High-performance semi-synthetic engine oil",
+    image: "/products/oil.jpg",
+    category: "Semi Synthetic",
+    viscosityGrade: "20W40",
+    specifications: "API SM JASO MA2",
     features: ["Superior wear protection", "Enhanced fuel efficiency", "Extended drain intervals"],
-    benefits: ["Prolongs engine life", "Reduces maintenance costs", "Improves performance"]
+    benefits: ["Prolongs engine life", "Reduces maintenance costs", "Improves performance"],
+    productPrices: {
+      "800ml": 397,
+      "1L": 417,
+      "1.2L": 507,
+      "3.5L": 1457,
+      "5L": 2087,
+      "7.5L": 3127,
+      "10L": 4177,
+      "20L": 8347,
+      "50L": 20857,
+    },
+    productGrade: "Semi Synthetic",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "2",
+    title: "Semi Synthetic (BB-5G)", 
+    description: "Advanced semi-synthetic engine oil",
+    image: "/products/oil.jpg",
+    category: "Semi Synthetic",
+    viscosityGrade: "20W50",
+    specifications: "API SM JASO MA2",
+    features: ["Superior wear protection", "Enhanced fuel efficiency", "Extended drain intervals"],
+    benefits: ["Prolongs engine life", "Reduces maintenance costs", "Improves performance"],
+    productPrices: {
+      "800ml": 487,
+      "1L": 517,
+      "1.2L": 627,
+      "3.5L": 1807,
+      "5L": 2587,
+      "7.5L": 3877,
+      "10L": 5177,
+      "20L": 10347,
+      "50L": 25857,
+    },
+    productGrade: "Semi Synthetic",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "3",
+    title: "Synthetic (BS4-SG)",
+    description: "Premium synthetic engine oil",
+    image: "/products/oil.jpg", 
+    category: "Synthetic",
+    viscosityGrade: "10W30",
+    specifications: "API SN",
+    features: ["Superior protection", "Enhanced performance", "Extended service life"],
+    benefits: ["Maximum engine protection", "Optimal efficiency", "Longer engine life"],
+    productPrices: {
+      "800ml": 487,
+      "1L": 517,
+      "1.2L": 627,
+      "3.5L": 1807,
+      "5L": 2587,
+      "7.5L": 3877,
+      "10L": 5177,
+      "20L": 10347,
+      "50L": 25857,
+    },
+    productGrade: "Synthetic",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "4",
+    title: "Synthetic (BS6-SG)",
+    description: "Advanced synthetic engine oil",
+    image: "/products/oil.jpg",
+    category: "Synthetic",
+    viscosityGrade: "5W30",
+    specifications: "API SN+",
+    features: ["Premium protection", "Superior performance", "Maximum efficiency"],
+    benefits: ["Extended engine life", "Optimal protection", "Enhanced performance"],
+    productPrices: {
+      "800ml": 507,
+      "1L": 547,
+      "1.2L": 657,
+      "3.5L": 1917,
+      "5L": 2737,
+      "7.5L": 4107,
+      "10L": 5477,
+      "20L": 10947,
+      "50L": 27357,
+    },
+    productGrade: "Synthetic",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "5",
+    title: "Semi Synthetic CNG",
+    description: "CNG-specific engine oil",
+    image: "/products/oil.jpg",
+    category: "Semi Synthetic",
+    viscosityGrade: "20W50",
+    specifications: "API SL-CF",
+    features: ["CNG engine protection", "Thermal stability", "Extended oil life"],
+    benefits: ["Specialized protection", "Better performance", "Reduced maintenance"],
+    productPrices: {
+      "800ml": 377,
+      "1L": 397,
+      "1.2L": 477,
+      "3.5L": 1397,
+      "5L": 1987,
+      "7.5L": 2977,
+      "10L": 3977,
+      "20L": 7947,
+      "50L": 19857,
+    },
+    productGrade: "Semi Synthetic CNG",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "6",
+    title: "Multi Grade (AC-5G)",
+    description: "High-quality multi-grade engine oil",
+    image: "/products/oil.jpg",
+    category: "Multi Grade",
+    viscosityGrade: "15W40",
+    specifications: "API CI4+",
+    features: ["All-season protection", "Extended service intervals", "Superior engine cleanliness"],
+    benefits: ["Year-round performance", "Reduced maintenance", "Engine longevity"],
+    productPrices: {
+      "800ml": 397,
+      "1L": 417,
+      "1.2L": 507,
+      "3.5L": 1457,
+      "5L": 2087,
+      "7.5L": 3127,
+      "10L": 4177,
+      "20L": 8347,
+      "50L": 20857,
+    },
+    productGrade: "Multi Grade",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "7",
+    title: "GEAR-X-EP-90",
+    description: "Premium gear oil",
+    image: "/products/gear-oil.jpg",
+    category: "Gear Oil",
+    viscosityGrade: "EP-90",
+    specifications: "MINAREL GEAR OIL",
+    features: ["Extreme pressure protection", "Superior gear protection", "Enhanced performance"],
+    benefits: ["Extended gear life", "Smooth operation", "Reduced wear"],
+    productPrices: {
+      "800ml": 347,
+      "1L": 387,
+      "1.2L": 467,
+      "3.5L": 1357,
+      "5L": 1937,
+      "7.5L": 2907,
+      "10L": 3877,
+      "20L": 7747,
+      "50L": 19357,
+    },
+    productGrade: "Mineral",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "8",
+    title: "Synthetic 68-(H.O-SG)",
+    description: "High-performance hydraulic oil",
+    image: "/products/hydraulic-oil.jpg",
+    category: "Hydraulic",
+    viscosityGrade: "68",
+    specifications: "HLP-68",
+    features: ["Superior wear protection", "Excellent oxidation stability", "Enhanced system efficiency"],
+    benefits: ["Extended service life", "System protection", "Improved performance"],
+    productPrices: {
+      "800ml": 397,
+      "1L": 447,
+      "1.2L": 537,
+      "3.5L": 1567,
+      "5L": 2237,
+      "7.5L": 3357,
+      "10L": 4477,
+      "20L": 8947,
+      "50L": 22357,
+    },
+    productGrade: "Synthetic",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "9",
+    title: "Synthetic 46-(H.O-SG)",
+    description: "Premium hydraulic oil",
+    image: "/products/hydraulic-oil.jpg",
+    category: "Hydraulic",
+    viscosityGrade: "46",
+    specifications: "HLP-46",
+    features: ["Advanced wear protection", "Superior thermal stability", "Enhanced system efficiency"],
+    benefits: ["Extended equipment life", "Reduced downtime", "Improved performance"],
+    productPrices: {
+      "800ml": 417,
+      "1L": 497,
+      "1.2L": 597,
+      "3.5L": 1747,
+      "5L": 2487,
+      "7.5L": 3727,
+      "10L": 4977,
+      "20L": 9947,
+      "50L": 24857,
+    },
+    productGrade: "Synthetic",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "10",
+    title: "4*40 (PSO)",
+    description: "Standard monograde engine oil",
+    image: "/products/oil.jpg",
+    category: "Monograde",
+    viscosityGrade: "40",
+    specifications: "PSO Standard",
+    features: ["Basic engine protection", "Standard performance", "Cost-effective"],
+    benefits: ["Engine protection", "Regular maintenance", "Economic choice"],
+    productPrices: {
+      "800ml": 347,
+      "1L": 387,
+      "1.2L": 467,
+      "3.5L": 1357,
+      "5L": 1937,
+      "7.5L": 2907,
+      "10L": 3877,
+      "20L": 7747,
+      "50L": 19357,
+    },
+    productGrade: "Standard",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "11",
+    title: "GL-5G",
+    description: "Multi-purpose grease",
+    image: "/products/grease.jpg",
+    category: "Grease",
+    viscosityGrade: "AP3",
+    specifications: "GREASE AP3",
+    features: ["Multi-purpose application", "Water resistant", "Good mechanical stability"],
+    benefits: ["Extended lubrication", "Component protection", "Versatile use"],
+    productPrices: {
+      "500gm": 257,
+      "1KG": 517,
+      "5KG": 2587,
+      "10KG": 5167,
+      "18KG": 9307,
+      "50KG": 25857,
+    },
+    productGrade: "Standard",
+    availableQuantities: ["500gm", "1KG", "5KG", "10KG", "18KG", "50KG"]
+  },
+  {
+    id: "12",
+    title: "SHOCKER TB 5G",
+    description: "Premium shock absorber oil",
+    image: "/products/shocker-oil.jpg",
+    category: "Specialty",
+    viscosityGrade: "TB 5G",
+    specifications: "SHOCKER OIL",
+    features: ["Optimized damping", "Temperature stable", "Enhanced performance"],
+    benefits: ["Smooth operation", "Better control", "Extended service life"],
+    productPrices: {
+      "175ml": 87,
+      "350ml": 187,
+      "1L": 517,
+      "1.2L": 627,
+      "3.5L": 1807,
+      "5L": 2587,
+      "7.5L": 3877,
+      "10L": 5177,
+      "20L": 10347,
+      "50L": 25857,
+    },
+    productGrade: "Premium",
+    availableQuantities: ["175ml", "350ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+  },
+  {
+    id: "13",
+    title: "MINAREL",
+    description: "Basic mineral engine oil",
+    image: "/products/oil.jpg",
+    category: "Mineral",
+    viscosityGrade: "20W40",
+    specifications: "API-SL",
+    features: ["Basic protection", "Standard performance", "Regular maintenance"],
+    benefits: ["Engine protection", "Cost-effective", "Basic maintenance"],
+    productPrices: {
+      "800ml": 347,
+      "1L": 397,
+      "1.2L": 477,
+      "3.5L": 1387,
+      "5L": 1987,
+      "7.5L": 2977,
+      "10L": 3977,
+      "20L": 7947,
+      "50L": 19857,
+    },
+    productGrade: "Mineral",
+    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
   }
+ 
+
 ];
+
+
 
 const sampleBlogPosts: BlogPost[] = [
   {
@@ -199,6 +500,8 @@ const AboutUsCard: React.FC = () => {
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedQuantity, setSelectedQuantity] = useState<string>("1L"); // Default selected quantity
+  const price = product.productPrices[selectedQuantity]; // Get the price based on selected quantity
 
   return (
     <Card className="overflow-hidden">
@@ -212,8 +515,29 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         />
         <CardTitle className="text-xl mb-2">{product.title}</CardTitle>
         <CardDescription className="mb-4">{product.description}</CardDescription>
-        <p className="text-lg font-bold text-[#004526] mb-4">₹{product.price}</p>
         
+        {/* Price will change based on selected quantity */}
+        <div className="mb-4">
+          <p className="text-lg font-bold text-[#004526]">₹{price}</p>
+        </div>
+        
+        {/* Quantity Selector */}
+        <div className="mb-4">
+          <label htmlFor="quantity" className="mr-2">Select Quantity:</label>
+          <select
+            id="quantity"
+            value={selectedQuantity}
+            onChange={(e) => setSelectedQuantity(e.target.value)}
+            className="p-2 border rounded-md"
+          >
+            {product.availableQuantities.map((quantity, index) => (
+              <option key={index} value={quantity}>
+                {quantity}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -314,6 +638,15 @@ const Body: React.FC = () => {
   const [lastChangeDate, setLastChangeDate] = useState<string>("");
   const [drivingConditions, setDrivingConditions] = useState<"normal" | "severe">("normal");
   const [calculationResult, setCalculationResult] = useState<string>("");
+
+  // New state for product filter
+  const [productFilter, setProductFilter] = useState<string>("all");
+
+  // Function to filter products based on selected category
+  const filteredProducts = Products.filter(product => {
+    if (productFilter === "all") return true; // Show all products if "all" is selected
+    return product.category.toLowerCase() === productFilter.toLowerCase(); // Filter based on selected category
+  });
 
   const handleCalculate = () => {
     const distance = parseFloat(distanceDriven);
@@ -443,10 +776,27 @@ const Body: React.FC = () => {
         </section>
 
         {/* Products Section */}
-        <section aria-label="Products" className="space-y-8">
+        <section aria-label="Products" className="space-y-9">
           <SectionTitle>Our Products</SectionTitle>
+          
+          {/* Filter Options */}
+          <div className="mb-4">
+            <label htmlFor="productFilter" className="mr-2">Filter by Category:</label>
+            <select
+              id="productFilter"
+              value={productFilter}
+              onChange={(e) => setProductFilter(e.target.value)}
+              className="p-2 border rounded-md"
+            >
+              <option value="all">All</option>
+              <option value="synthetic">Synthetic</option>
+              <option value="semi synthetic">Semi Synthetic</option>
+              <option value="multi grade">Multi Grade</option>
+            </select>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sampleProducts.map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

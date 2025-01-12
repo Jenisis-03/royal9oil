@@ -12,37 +12,39 @@ const fadeInUp = {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#004526] text-[#DFFF00] lg:pl-[calc(16rem-1px)] w-full transition-all duration-300 ease-in-out">
+    <footer className="bg-[#004526] text-[#DFFF00] lg:pl-[calc(16rem-1px)] w-full transition-all duration-300 ease-in-out relative">
+      <div className="absolute left-0 top-0 w-0 h-0 border-l-[50px] border-l-transparent border-b-[50px] border-b-[#004526] border-t-[50px] border-t-transparent" />
+      <div className="absolute left-0 top-0 w-0 h-0 border-l-[50px] border-l-transparent border-b-[50px] border-b-[#004526] border-t-[50px] border-t-transparent rotate-180" />
       <div className="w-full py-9 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <motion.div
               {...fadeInUp}
-              className="space-y-4"
+              className="space-y-4 text-center"
             >
-              <h3 className="text-3xl font-bold font-merriweather">Royal 9</h3>
-              <p className="text-sm">© 2024 Royal 9. All rights reserved.</p>
+              <h3 className="text-3xl font-bold font-merriweather">Royal 9 Engine Oil </h3>
+              <p className="text-sm">© 2024 Royal 9 Engine Oil. All rights reserved.</p>
             </motion.div>
 
             {/* Contact Information */}
             <motion.div
               {...fadeInUp}
-              className="space-y-4"
+              className="space-y-4 text-center"
             >
               <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
               <div className="space-y-2">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   <MapPin size={20} className="flex-shrink-0" />
-                  <p className="text-sm break-words">123 Oil Street, Engine City, EC 12345</p>
+                  <p className="text-sm break-words">Sodepur, Kolkata, West Bengal, India</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   <Phone size={20} className="flex-shrink-0" />
-                  <p className="text-sm">+1 (234) 567-8900</p>
+                  <p className="text-sm">(+91) 9051738330</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   <Mail size={20} className="flex-shrink-0" />
-                  <p className="text-sm break-words">contact@royal9.com</p>
+                  <p className="text-sm break-words">royalnineengineoil@gmail.com</p>
                 </div>
               </div>
             </motion.div>
@@ -50,7 +52,7 @@ const Footer = () => {
             {/* Business Hours */}
             <motion.div
               {...fadeInUp}
-              className="space-y-4"
+              className="space-y-4 text-center"
             >
               <h4 className="text-xl font-semibold mb-4">Business Hours</h4>
               <div className="space-y-2 text-sm">
@@ -63,10 +65,10 @@ const Footer = () => {
             {/* Social Links */}
             <motion.div
               {...fadeInUp}
-              className="space-y-4"
+              className="space-y-4 text-center"
             >
               <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <Link 
                   href="https://instagram.com" 
                   target="_blank" 
@@ -109,8 +111,9 @@ const Footer = () => {
                     <Facebook size={24} />
                   </motion.div>
                 </Link>
+                {/* Updated Email Link */}
                 <Link 
-                  href="mailto:contact@royal9.com"
+                  href={`mailto:royalnineengineoil@gmail.com?subject=Inquiry&body=Hello,`}
                   className="hover:text-white transition-colors"
                 >
                   <motion.div 
@@ -127,7 +130,7 @@ const Footer = () => {
 
           {/* Bottom Copyright */}
           <div className="border-t border-[#DFFF00]/20 mt-8 pt-8 text-center text-sm">
-            <p>Designed and Developed with ❤️ by Royal 9 Team</p>
+            <p>Designed and Developed with ❤️ by Subham Dubey</p>
           </div>
         </div>
       </div>

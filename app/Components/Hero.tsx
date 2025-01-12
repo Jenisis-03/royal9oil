@@ -40,20 +40,20 @@ TitleBanner.displayName = 'TitleBanner';
 
 const carouselData = [
   {
-    category: "Artificial Intelligence",
-    title: "You can do more with AI.",
+    category: "PREMIUM SERVICES",
+    title: "We offer a wide range of premium services to meet your needs.",
     src: "/4.jpeg",
     content: <div />,
   },
   {
-    category: "Productivity",
-    title: "Enhance your productivity.",
+    category: "DRIVE AS SMOOTH AS LIGHT",
+    title: "We offer a wide range of premium services to meet your needs.",
     src: "/3.jpg",
     content: <div />,
   },
   {
-    category: "Product",
-    title: "Launching the new Apple Vision Pro.",
+    category: "VARIETY OF PRODUCTS",
+    title: "We have a wide range of products to choose from.",
     src: "/7.jpeg",
     content: <div />,
   },
