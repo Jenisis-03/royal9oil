@@ -12,7 +12,7 @@ const fadeInUp = {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#004526] text-[#DFFF00] lg:pl-[calc(16rem-1px)] w-full transition-all duration-300 ease-in-out relative">
+    <footer className="bg-[#004526] text-[#DFFF00] lg:pl-[calc(17rem-1px)] w-full transition-all duration-300 ease-in-out relative">
       <div className="absolute left-0 top-0 w-0 h-0 border-l-[50px] border-l-transparent border-b-[50px] border-b-[#004526] border-t-[50px] border-t-transparent" />
       <div className="absolute left-0 top-0 w-0 h-0 border-l-[50px] border-l-transparent border-b-[50px] border-b-[#004526] border-t-[50px] border-t-transparent rotate-180" />
       <div className="w-full py-9 px-4 sm:px-6 md:px-8">
@@ -41,6 +41,7 @@ const Footer = () => {
                 <div className="flex items-center justify-center gap-2">
                   <Phone size={20} className="flex-shrink-0" />
                   <p className="text-sm">(+91) 9051738330</p>
+                  <p className="text-sm">(+91) 6291881138</p>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Mail size={20} className="flex-shrink-0" />
