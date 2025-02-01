@@ -45,11 +45,11 @@ const fadeInUp = {
 
 const expandAnimation = {
   hidden: { height: 0, opacity: 0 },
-  visible: { 
-    height: "auto", 
+  visible: {
+    height: "auto",
     opacity: 1,
-    transition: { duration: 0.3 }
-  }
+    transition: { duration: 0.3 },
+  },
 };
 
 // Oil calculator logic
@@ -88,19 +88,21 @@ const oilChangeCalculator = (
 
   if (lastChangeDate) {
     const currentDate = new Date();
-    const elapsedMonths = 
-      (currentDate.getFullYear() - lastChangeDate.getFullYear()) * 12 + 
+    const elapsedMonths =
+      (currentDate.getFullYear() - lastChangeDate.getFullYear()) * 12 +
       (currentDate.getMonth() - lastChangeDate.getMonth());
-    
+
     if (elapsedMonths > recommendedMonths) {
       return "Oil change due based on time.";
     }
   }
 
   if (remainingKm <= 0) {
-    return `Oil change overdue! You've driven ${Math.abs(remainingKm)} km beyond the limit.`;
+    return `Oil change overdue! You've driven ${Math.abs(
+      remainingKm
+    )} km beyond the limit.`;
   }
-  
+
   return `Remaining distance before oil change: ${Math.round(remainingKm)} km.`;
 };
 
@@ -114,8 +116,16 @@ const Products: Product[] = [
     category: "Semi Synthetic",
     viscosityGrade: "20W40",
     specifications: "API SM JASO MA2",
-    features: ["Superior wear protection", "Enhanced fuel efficiency", "Extended drain intervals"],
-    benefits: ["Prolongs engine life", "Reduces maintenance costs", "Improves performance"],
+    features: [
+      "Superior wear protection",
+      "Enhanced fuel efficiency",
+      "Extended drain intervals",
+    ],
+    benefits: [
+      "Prolongs engine life",
+      "Reduces maintenance costs",
+      "Improves performance",
+    ],
     productPrices: {
       "800ml": 397,
       "1L": 417,
@@ -128,18 +138,36 @@ const Products: Product[] = [
       "50L": 20857,
     },
     productGrade: "Semi Synthetic",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "2",
-    title: "Semi Synthetic (BB-5G)", 
+    title: "Semi Synthetic (BB-5G)",
     description: "Advanced semi-synthetic engine oil",
     image: "/products/oil.jpg",
     category: "Semi Synthetic",
     viscosityGrade: "20W50",
     specifications: "API SM JASO MA2",
-    features: ["Superior wear protection", "Enhanced fuel efficiency", "Extended drain intervals"],
-    benefits: ["Prolongs engine life", "Reduces maintenance costs", "Improves performance"],
+    features: [
+      "Superior wear protection",
+      "Enhanced fuel efficiency",
+      "Extended drain intervals",
+    ],
+    benefits: [
+      "Prolongs engine life",
+      "Reduces maintenance costs",
+      "Improves performance",
+    ],
     productPrices: {
       "800ml": 487,
       "1L": 517,
@@ -152,18 +180,36 @@ const Products: Product[] = [
       "50L": 25857,
     },
     productGrade: "Semi Synthetic",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "3",
     title: "Synthetic (BS4-SG)",
     description: "Premium synthetic engine oil",
-    image: "/products/oil.jpg", 
+    image: "/products/oil.jpg",
     category: "Synthetic",
     viscosityGrade: "10W30",
     specifications: "API SN",
-    features: ["Superior protection", "Enhanced performance", "Extended service life"],
-    benefits: ["Maximum engine protection", "Optimal efficiency", "Longer engine life"],
+    features: [
+      "Superior protection",
+      "Enhanced performance",
+      "Extended service life",
+    ],
+    benefits: [
+      "Maximum engine protection",
+      "Optimal efficiency",
+      "Longer engine life",
+    ],
     productPrices: {
       "800ml": 487,
       "1L": 517,
@@ -176,7 +222,17 @@ const Products: Product[] = [
       "50L": 25857,
     },
     productGrade: "Synthetic",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "4",
@@ -186,8 +242,16 @@ const Products: Product[] = [
     category: "Synthetic",
     viscosityGrade: "5W30",
     specifications: "API SN+",
-    features: ["Premium protection", "Superior performance", "Maximum efficiency"],
-    benefits: ["Extended engine life", "Optimal protection", "Enhanced performance"],
+    features: [
+      "Premium protection",
+      "Superior performance",
+      "Maximum efficiency",
+    ],
+    benefits: [
+      "Extended engine life",
+      "Optimal protection",
+      "Enhanced performance",
+    ],
     productPrices: {
       "800ml": 507,
       "1L": 547,
@@ -200,7 +264,17 @@ const Products: Product[] = [
       "50L": 27357,
     },
     productGrade: "Synthetic",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "5",
@@ -210,8 +284,16 @@ const Products: Product[] = [
     category: "Semi Synthetic",
     viscosityGrade: "20W50",
     specifications: "API SL-CF",
-    features: ["CNG engine protection", "Thermal stability", "Extended oil life"],
-    benefits: ["Specialized protection", "Better performance", "Reduced maintenance"],
+    features: [
+      "CNG engine protection",
+      "Thermal stability",
+      "Extended oil life",
+    ],
+    benefits: [
+      "Specialized protection",
+      "Better performance",
+      "Reduced maintenance",
+    ],
     productPrices: {
       "800ml": 377,
       "1L": 397,
@@ -224,7 +306,17 @@ const Products: Product[] = [
       "50L": 19857,
     },
     productGrade: "Semi Synthetic CNG",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "6",
@@ -234,8 +326,16 @@ const Products: Product[] = [
     category: "Multi Grade",
     viscosityGrade: "15W40",
     specifications: "API CI4+",
-    features: ["All-season protection", "Extended service intervals", "Superior engine cleanliness"],
-    benefits: ["Year-round performance", "Reduced maintenance", "Engine longevity"],
+    features: [
+      "All-season protection",
+      "Extended service intervals",
+      "Superior engine cleanliness",
+    ],
+    benefits: [
+      "Year-round performance",
+      "Reduced maintenance",
+      "Engine longevity",
+    ],
     productPrices: {
       "800ml": 397,
       "1L": 417,
@@ -248,7 +348,17 @@ const Products: Product[] = [
       "50L": 20857,
     },
     productGrade: "Multi Grade",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "7",
@@ -258,7 +368,11 @@ const Products: Product[] = [
     category: "Gear Oil",
     viscosityGrade: "EP-90",
     specifications: "MINAREL GEAR OIL",
-    features: ["Extreme pressure protection", "Superior gear protection", "Enhanced performance"],
+    features: [
+      "Extreme pressure protection",
+      "Superior gear protection",
+      "Enhanced performance",
+    ],
     benefits: ["Extended gear life", "Smooth operation", "Reduced wear"],
     productPrices: {
       "800ml": 347,
@@ -272,7 +386,17 @@ const Products: Product[] = [
       "50L": 19357,
     },
     productGrade: "Mineral",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "8",
@@ -282,8 +406,16 @@ const Products: Product[] = [
     category: "Hydraulic",
     viscosityGrade: "68",
     specifications: "HLP-68",
-    features: ["Superior wear protection", "Excellent oxidation stability", "Enhanced system efficiency"],
-    benefits: ["Extended service life", "System protection", "Improved performance"],
+    features: [
+      "Superior wear protection",
+      "Excellent oxidation stability",
+      "Enhanced system efficiency",
+    ],
+    benefits: [
+      "Extended service life",
+      "System protection",
+      "Improved performance",
+    ],
     productPrices: {
       "800ml": 397,
       "1L": 447,
@@ -296,7 +428,17 @@ const Products: Product[] = [
       "50L": 22357,
     },
     productGrade: "Synthetic",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "9",
@@ -306,8 +448,16 @@ const Products: Product[] = [
     category: "Hydraulic",
     viscosityGrade: "46",
     specifications: "HLP-46",
-    features: ["Advanced wear protection", "Superior thermal stability", "Enhanced system efficiency"],
-    benefits: ["Extended equipment life", "Reduced downtime", "Improved performance"],
+    features: [
+      "Advanced wear protection",
+      "Superior thermal stability",
+      "Enhanced system efficiency",
+    ],
+    benefits: [
+      "Extended equipment life",
+      "Reduced downtime",
+      "Improved performance",
+    ],
     productPrices: {
       "800ml": 417,
       "1L": 497,
@@ -320,7 +470,17 @@ const Products: Product[] = [
       "50L": 24857,
     },
     productGrade: "Synthetic",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "10",
@@ -330,7 +490,11 @@ const Products: Product[] = [
     category: "Monograde",
     viscosityGrade: "40",
     specifications: "PSO Standard",
-    features: ["Basic engine protection", "Standard performance", "Cost-effective"],
+    features: [
+      "Basic engine protection",
+      "Standard performance",
+      "Cost-effective",
+    ],
     benefits: ["Engine protection", "Regular maintenance", "Economic choice"],
     productPrices: {
       "800ml": 347,
@@ -344,7 +508,17 @@ const Products: Product[] = [
       "50L": 19357,
     },
     productGrade: "Standard",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "11",
@@ -354,7 +528,11 @@ const Products: Product[] = [
     category: "Grease",
     viscosityGrade: "AP3",
     specifications: "GREASE AP3",
-    features: ["Multi-purpose application", "Water resistant", "Good mechanical stability"],
+    features: [
+      "Multi-purpose application",
+      "Water resistant",
+      "Good mechanical stability",
+    ],
     benefits: ["Extended lubrication", "Component protection", "Versatile use"],
     productPrices: {
       "500gm": 257,
@@ -365,7 +543,7 @@ const Products: Product[] = [
       "50KG": 25857,
     },
     productGrade: "Standard",
-    availableQuantities: ["500gm", "1KG", "5KG", "10KG", "18KG", "50KG"]
+    availableQuantities: ["500gm", "1KG", "5KG", "10KG", "18KG", "50KG"],
   },
   {
     id: "12",
@@ -375,7 +553,11 @@ const Products: Product[] = [
     category: "Specialty",
     viscosityGrade: "TB 5G",
     specifications: "SHOCKER OIL",
-    features: ["Optimized damping", "Temperature stable", "Enhanced performance"],
+    features: [
+      "Optimized damping",
+      "Temperature stable",
+      "Enhanced performance",
+    ],
     benefits: ["Smooth operation", "Better control", "Extended service life"],
     productPrices: {
       "175ml": 87,
@@ -390,7 +572,18 @@ const Products: Product[] = [
       "50L": 25857,
     },
     productGrade: "Premium",
-    availableQuantities: ["175ml", "350ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
+    availableQuantities: [
+      "175ml",
+      "350ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
   },
   {
     id: "13",
@@ -400,7 +593,11 @@ const Products: Product[] = [
     category: "Mineral",
     viscosityGrade: "20W40",
     specifications: "API-SL",
-    features: ["Basic protection", "Standard performance", "Regular maintenance"],
+    features: [
+      "Basic protection",
+      "Standard performance",
+      "Regular maintenance",
+    ],
     benefits: ["Engine protection", "Cost-effective", "Basic maintenance"],
     productPrices: {
       "800ml": 347,
@@ -414,27 +611,45 @@ const Products: Product[] = [
       "50L": 19857,
     },
     productGrade: "Mineral",
-    availableQuantities: ["800ml", "1L", "1.2L", "3.5L", "5L", "7.5L", "10L", "20L", "50L"]
-  }
- 
-
+    availableQuantities: [
+      "800ml",
+      "1L",
+      "1.2L",
+      "3.5L",
+      "5L",
+      "7.5L",
+      "10L",
+      "20L",
+      "50L",
+    ],
+  },
 ];
-
-
 
 const sampleBlogPosts: BlogPost[] = [
   {
-    id: "1",
-    title: "Understanding Engine Oil Grades",
-    description: "Learn about different oil grades and their applications",
-    image: "/blog/oil-grades.jpg",
-    date: "2024-01-15",
-    content: "Detailed content about engine oil grades..."
+  id: "1",
+  title: "Understanding Engine Oil Grades",
+  description: "Learn about different oil grades and their applications",
+  image: "/CEO.png",
+  date: "2024-01-15",
+  content:"Understanding Engine Oil Grades: Choosing the right engine oil is crucial for performance and longevity, as oil grades determine viscosity and temperature performance. Viscosity, indicated by numbers like 5W-30 or 10W-40, affects flow at different temperatures, with lower numbers ensuring better cold-weather performance. Common grades include 5W-30, offering balanced protection; 10W-40, ideal for older engines due to its thickness; and 0W-20, enhancing fuel efficiency in modern cars. Using the correct grade ensures lubrication, reduces wear, and improves fuel economy—always check manufacturer recommendations. How Engine Oils Are Made: Engine oil production involves selecting a base—mineral, synthetic, or semi-synthetic—comprising 70-90% of the formula. Crude oil undergoes hydrocracking to remove impurities, followed by the addition of key additives like detergents (for cleanliness), anti-wear agents (for metal protection), viscosity modifiers (for flow stability), and antioxidants (to prevent degradation). These components are blended under precise conditions and rigorously tested for viscosity, heat resistance, and wear protection. Once finalized, the oil is packaged and distributed globally. High-quality engine oil extends engine life, improves efficiency, and enhances performance. Choosing the right one ensures optimal function and reliability."
+  },
+  {
+  id: "2",
+  title: "How Engine Oils Are Made: A Peek Behind the Scenes",
+  description: "Discover the science and process behind engine oil production.",
+  image: "/Oil_making.png",
+  date: "2024-01-31",
+  content: "Engine oil production is a complex process involving science and engineering to ensure optimal engine performance. It begins with selecting a base oil, which can be mineral, synthetic, or semi-synthetic, making up 70-90% of the final product. The crude oil undergoes refining and hydrocracking to remove impurities, improving viscosity and stability. Next, powerful additives are blended in to enhance performance—detergents and dispersants keep engines clean, anti-wear agents protect metal surfaces, viscosity modifiers ensure smooth flow in varying temperatures, and antioxidants prevent degradation. This precise blending process occurs under controlled conditions, followed by rigorous testing to confirm viscosity, heat resistance, oxidation stability, and overall wear protection. Once approved, the oil is bottled, labeled, and distributed globally for use in vehicles of all types. High-quality engine oil plays a critical role in engine longevity, efficiency, and power, helping reduce friction, prevent deposits, and optimize fuel economy. Choosing the right oil is essential for maintaining engine health, as different formulations cater to varying performance needs and environmental conditions. Understanding the process behind engine oil production highlights the importance of using high-quality products to keep vehicles running smoothly and efficiently."
   }
-];
-
+  ];
+  
+  
 // Components
-const SectionTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => {
+const SectionTitle: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -443,11 +658,18 @@ const SectionTitle: React.FC<{ children: React.ReactNode; className?: string }> 
       className={cn("flex flex-col space-y-4", className)}
     >
       <h2 className="text-4xl font-black tracking-tight text-[#004526] font-anton uppercase">
-        {typeof children === 'string' && children.split(' ').map((word, i) => (
-          <span key={i}>
-            {i % 2 === 0 ? <span className="text-[#DFFF00]">{word}</span> : ` ${word} `}
-          </span>
-        ))}
+        {typeof children === "string" &&
+          children
+            .split(" ")
+            .map((word, i) => (
+              <span key={i}>
+                {i % 2 === 0 ? (
+                  <span className="text-[#DFFF00]">{word}</span>
+                ) : (
+                  ` ${word} `
+                )}
+              </span>
+            ))}
       </h2>
       <div className="h-1 w-20 bg-[#004526] rounded-full" />
     </motion.div>
@@ -464,7 +686,7 @@ const AboutUsCard: React.FC = () => {
         <CardDescription className="mb-4">
           Leading manufacturer of premium engine oils and lubricants.
         </CardDescription>
-        
+
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -475,7 +697,10 @@ const AboutUsCard: React.FC = () => {
               className="space-y-4"
             >
               <p className="text-gray-700">
-                With over two decades of experience in the industry, Royal 9 has established itself as a trusted name in automotive lubricants. Our commitment to quality and innovation drives us to deliver products that exceed industry standards.
+                With over two decades of experience in the industry, Royal 9 has
+                established itself as a trusted name in automotive lubricants.
+                Our commitment to quality and innovation drives us to deliver
+                products that exceed industry standards.
               </p>
               <ul className="list-disc list-inside space-y-2">
                 <li>Premium quality products</li>
@@ -486,12 +711,12 @@ const AboutUsCard: React.FC = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        
+
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="mt-4 text-[#004526] font-medium hover:underline"
         >
-          {isExpanded ? 'Show Less' : 'Read More'}
+          {isExpanded ? "Show Less" : "Read More"}
         </button>
       </CardContent>
     </Card>
@@ -506,24 +731,28 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <Card className="overflow-hidden">
       <CardContent className="p-6">
-        <Image 
-          src={product.image} 
+        <Image
+          src={product.image}
           alt={product.title}
           width={300}
           height={200}
           className="w-full h-48 object-cover rounded-lg mb-4"
         />
         <CardTitle className="text-xl mb-2">{product.title}</CardTitle>
-        <CardDescription className="mb-4">{product.description}</CardDescription>
-        
+        <CardDescription className="mb-4">
+          {product.description}
+        </CardDescription>
+
         {/* Price will change based on selected quantity */}
         <div className="mb-4">
           <p className="text-lg font-bold text-[#004526]">₹{price}</p>
         </div>
-        
+
         {/* Quantity Selector */}
         <div className="mb-4">
-          <label htmlFor="quantity" className="mr-2">Select Quantity:</label>
+          <label htmlFor="quantity" className="mr-2">
+            Select Quantity:
+          </label>
           <select
             id="quantity"
             value={selectedQuantity}
@@ -565,7 +794,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                   <p>{product.specifications}</p>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-2">Features:</h4>
                 <ul className="list-disc list-inside">
@@ -577,12 +806,12 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             </motion.div>
           )}
         </AnimatePresence>
-        
+
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="mt-4 text-[#004526] font-medium hover:underline"
         >
-          {isExpanded ? 'Show Less' : 'More Details'}
+          {isExpanded ? "Show Less" : "More Details"}
         </button>
       </CardContent>
     </Card>
@@ -595,8 +824,8 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
   return (
     <Card>
       <CardContent className="p-6">
-        <Image 
-          src={post.image} 
+        <Image
+          src={post.image}
           alt={post.title}
           width={400}
           height={250}
@@ -605,7 +834,7 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
         <CardTitle className="text-xl mb-2">{post.title}</CardTitle>
         <p className="text-sm text-gray-500 mb-2">{post.date}</p>
         <CardDescription className="mb-4">{post.description}</CardDescription>
-        
+
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -619,12 +848,12 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
             </motion.div>
           )}
         </AnimatePresence>
-        
+
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="mt-4 text-[#004526] font-medium hover:underline"
         >
-          {isExpanded ? 'Show Less' : 'Read More'}
+          {isExpanded ? "Show Less" : "Read More"}
         </button>
       </CardContent>
     </Card>
@@ -632,18 +861,24 @@ const BlogCard: React.FC<{ post: BlogPost }> = ({ post }) => {
 };
 
 const Body: React.FC = () => {
-  const [vehicleType, setVehicleType] = useState<"car" | "royal_enfield">("car");
-  const [oilType, setOilType] = useState<"synthetic" | "semi_synthetic" | "conventional">("synthetic");
+  const [vehicleType, setVehicleType] = useState<"car" | "royal_enfield">(
+    "car"
+  );
+  const [oilType, setOilType] = useState<
+    "synthetic" | "semi_synthetic" | "conventional"
+  >("synthetic");
   const [distanceDriven, setDistanceDriven] = useState("");
   const [lastChangeDate, setLastChangeDate] = useState<string>("");
-  const [drivingConditions, setDrivingConditions] = useState<"normal" | "severe">("normal");
+  const [drivingConditions, setDrivingConditions] = useState<
+    "normal" | "severe"
+  >("normal");
   const [calculationResult, setCalculationResult] = useState<string>("");
 
   // New state for product filter
   const [productFilter, setProductFilter] = useState<string>("all");
 
   // Function to filter products based on selected category
-  const filteredProducts = Products.filter(product => {
+  const filteredProducts = Products.filter((product) => {
     if (productFilter === "all") return true; // Show all products if "all" is selected
     return product.category.toLowerCase() === productFilter.toLowerCase(); // Filter based on selected category
   });
@@ -682,13 +917,18 @@ const Body: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="vehicleType" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="vehicleType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Vehicle Type
                   </label>
                   <select
                     id="vehicleType"
                     value={vehicleType}
-                    onChange={(e) => setVehicleType(e.target.value as "car" | "royal_enfield")}
+                    onChange={(e) =>
+                      setVehicleType(e.target.value as "car" | "royal_enfield")
+                    }
                     className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-[#004526] focus:border-[#004526]"
                   >
                     <option value="car">Car</option>
@@ -697,13 +937,23 @@ const Body: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="oilType" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="oilType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Oil Type
                   </label>
                   <select
                     id="oilType"
                     value={oilType}
-                    onChange={(e) => setOilType(e.target.value as "synthetic" | "semi_synthetic" | "conventional")}
+                    onChange={(e) =>
+                      setOilType(
+                        e.target.value as
+                          | "synthetic"
+                          | "semi_synthetic"
+                          | "conventional"
+                      )
+                    }
                     className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-[#004526] focus:border-[#004526]"
                   >
                     <option value="synthetic">Synthetic</option>
@@ -713,7 +963,10 @@ const Body: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="distance" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="distance"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Distance Driven (km)
                   </label>
                   <input
@@ -729,7 +982,10 @@ const Body: React.FC = () => {
 
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="lastChangeDate" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="lastChangeDate"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Last Oil Change Date
                   </label>
                   <input
@@ -742,13 +998,20 @@ const Body: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="conditions" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="conditions"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Driving Conditions
                   </label>
                   <select
                     id="conditions"
                     value={drivingConditions}
-                    onChange={(e) => setDrivingConditions(e.target.value as "normal" | "severe")}
+                    onChange={(e) =>
+                      setDrivingConditions(
+                        e.target.value as "normal" | "severe"
+                      )
+                    }
                     className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-[#004526] focus:border-[#004526]"
                   >
                     <option value="normal">Normal</option>
@@ -778,10 +1041,12 @@ const Body: React.FC = () => {
         {/* Products Section */}
         <section aria-label="Products" className="space-y-9">
           <SectionTitle>Our Products</SectionTitle>
-          
+
           {/* Filter Options */}
           <div className="mb-4">
-            <label htmlFor="productFilter" className="mr-2">Filter by Category:</label>
+            <label htmlFor="productFilter" className="mr-2">
+              Filter by Category:
+            </label>
             <select
               id="productFilter"
               value={productFilter}
